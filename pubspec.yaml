@@ -1,0 +1,19 @@
+name: behavior_tracker_sdk
+description: A Flutter SDK for collecting behavioral metrics (keystroke, touch, sensors, navigation, geo).
+version: 0.1.0
+homepage: https://github.com/sathwika-sree8/behavior_tracker_sdk
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sensors_plus: ^4.0.1
+  geolocator: ^10.1.0
+  permission_handler: ^11.1.0
+  http: ^0.13.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0

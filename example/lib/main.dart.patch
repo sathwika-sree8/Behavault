@@ -1,0 +1,28 @@
+final isAnomalous = await api.sendBehaviorData(data);
+
+                  showDialog(
+                    context: context,
+                    builder: (_) => AlertDialog(
+                      title: const Text("Anomaly Detection"),
+                      content: Text(
+                        isAnomalous
+                            ? "⚠️ Suspicious behavior!"
+                            : "✅ Normal activity.",
+                      ),
+                    ),
+                  );
+=======
+                  final api = ApiClient(baseUrl: "http://127.0.0.1:8000");
+                  final isAnomalous = await api.sendBehaviorData(data);
+
+                  showDialog(
+                    context: context,
+                    builder: (_) => AlertDialog(
+                      title: const Text("Anomaly Detection"),
+                      content: Text(
+                        isAnomalous
+                            ? "⚠️ Suspicious behavior!"
+                            : "✅ Normal activity.",
+                      ),
+                    ),
+                  );

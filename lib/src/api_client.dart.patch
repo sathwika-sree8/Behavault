@@ -1,0 +1,35 @@
+ApiClient({this.baseUrl = "http://127.0.0.1:8000 "}); // Your laptop IP
+
+  Future<bool> sendBehaviorData(Map<String, dynamic> sessionData) async {
+=======
+  final String baseUrl;
+
+  ApiClient({this.baseUrl = "http://127.0.0.1:8000"}); // Your laptop IP
+
+  Future<bool> sendBehaviorData(Map<String, dynamic> sessionData) async {
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+  List<double> _extractFeatures(Map<String, dynamic> data) {
+    return [
+      (data["keystrokes"] as List).length.toDouble(),
+      (data["motion"] as List).length.toDouble(),
+      (data["touches"] as List).length.toDouble(),
+      (data["location"] == null) ? 0.0 : 1.0,
+      (data["navigation"] as List).length.toDouble(),
+    ];
+  }
+=======
+  List<double> _extractFeatures(Map<String, dynamic> data) {
+    List<dynamic>? keystrokes = data["keystrokes"];
+    List<dynamic>? motion = data["motion"];
+    List<dynamic>? touches = data["touches"];
+    List<dynamic>? navigation = data["navigation"];
+
+    return [
+      (keystrokes != null && keystrokes is List) ? keystrokes.length.toDouble() : 0.0,
+      (motion != null && motion is List) ? motion.length.toDouble() : 0.0,
+      (touches != null && touches is List) ? touches.length.toDouble() : 0.0,
+      (data["location"] == null) ? 0.0 : 1.0,
+      (navigation != null && navigation is List) ? navigation.length.toDouble() : 0.0,
+    ];
+  }
